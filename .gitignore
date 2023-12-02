@@ -23,3 +23,5 @@
 hs_err_pid*
 replay_pid*
 /bin/
+
+src/googleAPI/api_key.txt

@@ -15,7 +15,8 @@ public class GoogleAPI{
 	    InputStream is = null;
 	    OutputStream os = null;
 	    try {
-	    	String apiKey = "AIzaSyA2hEoxEC7NeXe6diHFBt8i7bmu2oqGmi8";
+	    	reader = new BufferedReader(new FileReader("api_key.txt"));
+            String apiKey = reader.readLine();
 	    	String imageURL = "https://maps.googleapis.com/maps/api/staticmap?center=" 
 	                + URLEncoder.encode(location, "UTF-8") 
 	                + "&zoom=11&size=612x612&scale=2&key=" + apiKey;
