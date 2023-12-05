@@ -25,3 +25,4 @@ replay_pid*
 /bin/
 
 src/googleAPI/api_key.txt
+src/googleAPU/api_key

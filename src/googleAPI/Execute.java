@@ -1,7 +1,7 @@
-package google;
+package googleAPI;
 
 public class Execute {
 	public static void main(String[] args) {
-		test test1 = new test();
+		MapFrame map = new MapFrame();
 	}
 }

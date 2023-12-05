@@ -1,7 +1,9 @@
-package google;
+package googleAPI;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -11,15 +13,20 @@ import javax.swing.ImageIcon;
 
 public class GoogleAPI{
 	
-	public void downloadMap(String location) {
+	public void downloadMap(String location, int zoom) {
+		String apiDirectory = "C:\\Users\\Grey\\Desktop\\Traveler\\Traveler\\src\\googleAPI\\api_key";
 	    InputStream is = null;
 	    OutputStream os = null;
 	    try {
-	    	reader = new BufferedReader(new FileReader("api_key.txt"));
+	    	BufferedReader reader = new BufferedReader(new FileReader(apiDirectory));
             String apiKey = reader.readLine();
+            
 	    	String imageURL = "https://maps.googleapis.com/maps/api/staticmap?center=" 
 	                + URLEncoder.encode(location, "UTF-8") 
-	                + "&zoom=11&size=612x612&scale=2&key=" + apiKey;
+	                + "&zoom=" + zoom
+	                + "&size=612x612"
+	                + "&scale=2&key=" + apiKey;
+	    	
 	    	URL url = new URL(imageURL);
 			is = url.openStream();
 			os = new FileOutputStream(location);
@@ -59,4 +66,5 @@ public class GoogleAPI{
 		File f = new File(fileName);
 		f.delete();
 	}
+	
 }
