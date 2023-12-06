@@ -9,10 +9,10 @@ public class googleMap extends JPanel {
     private GoogleAPI googleapi = new GoogleAPI();
     private JLabel mapLabel = new JLabel(); // 지도 이미지를 담을 라벨
     private String location = "한국외국어대학교 글로벌캠퍼스";
-    private int zoomLevel = 12; // 초기 확대 수준
+    private int zoomLevel = 15; // 초기 확대 수준
 
     public googleMap() {
-        setPreferredSize(new Dimension(800, 600)); // 패널 크기 설정
+        setPreferredSize(new Dimension(612, 612)); // 패널 크기 설정
         updateMap(); // 초기 지도 업데이트
 
         addMouseWheelListener(new MouseWheelListener() {
@@ -40,7 +40,7 @@ public class googleMap extends JPanel {
         googleapi.downloadMap(location, zoomLevel);
         ImageIcon mapImage = googleapi.getMap(location);
         googleapi.fileDelete(location);
-
+        
         mapLabel.setIcon(mapImage); // 라벨에 이미지 설정
 
         removeAll(); // 패널 초기화
