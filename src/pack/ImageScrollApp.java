@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.event.*;
+import Image.*;
 
 public class ImageScrollApp extends JFrame {
 
@@ -90,7 +91,7 @@ public class ImageScrollApp extends JFrame {
     }
 
     private void displayImage(int index) {
-        ImageIcon imageIcon = new ImageIcon("C:/Users/shbee/eclipse-workspace/Assignment1/src/Image/image" + index + ".jpg"); // 이미지 파일명 예시
+        ImageIcon imageIcon = new ImageIcon("C:\\Users\\Grey\\Desktop\\Traveler\\Traveler\\src\\Image\\image" + index + ".jpg"); // 이미지 파일명 예시
 
         if (imageLabel.getParent() != null) {
             int scrollPaneWidth = imageLabel.getParent().getWidth();

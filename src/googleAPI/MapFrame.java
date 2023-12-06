@@ -13,24 +13,24 @@ public class MapFrame extends JFrame {
             "한국외국어대학교 글로벌캠퍼스 백년관"};
 
     private String[] imagePaths = {
-            "C:\\Users\\Grey\\Desktop\\Traveler\\Traveler\\src\\공학관.WEBP",
-            "C:\\Users\\Grey\\Desktop\\Traveler\\Traveler\\src\\교양관.jpg",
+            "C:\\Users\\Grey\\Desktop\\Traveler\\Traveler\\imagesrc\\공학관.webp",
+            "C:\\Users\\Grey\\Desktop\\Traveler\\Traveler\\imagesrc\\교양관.jpgs",
             "C:\\Users\\Grey\\Desktop\\Traveler\\Traveler\\src\\어문관.jpg",
             "C:\\Users\\Grey\\Desktop\\Traveler\\Traveler\\src\\자연과학관.jpg"
     };
 
     private googleMap map = new googleMap();
 
-    private JPanel pinPanel = new JPanel(new GridLayout(4, 1)); // 4개의 패널을 위아래로 나열
+    private JPanel pinPanel = new JPanel(new GridLayout(pinpoints.length, 1));
 
     public MapFrame() {
         setTitle("Google Map with Pin Details");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        pinPanel.setPreferredSize(new Dimension(200, 600)); // 우측 패널 크기 설정
+        pinPanel.setPreferredSize(new Dimension(200, 600));
 
         for (int i = 0; i < pinpoints.length; i++) {
-            final int index = i; // final로 선언된 index 변수를 사용하여 클로저 안에서 참조하도록 변경
+            final int index = i;
 
             JPanel panel = new JPanel();
             ImageIcon imageIcon = new ImageIcon(imagePaths[i]);
