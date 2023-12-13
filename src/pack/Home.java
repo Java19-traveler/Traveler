@@ -1,7 +1,17 @@
 package pack;
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
+import java.awt.Color;
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.IOException;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 public class Home {
 
@@ -59,6 +69,16 @@ public class Home {
         mapBtn.setFont(new Font("함초롬바탕", Font.BOLD, 16));
         mapBtn.setBackground(new Color(0, 0, 0));
         mapBtn.setBounds(175, 0, 75, 50);
+        mapBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            	try {
+            	    Runtime.getRuntime().exec("java -classpath ./bin googleAPI.Execute");
+            	} catch (IOException ex) {
+            	    ex.printStackTrace();
+            	}
+            }
+        });
         topPanel.add(mapBtn);
     }
 

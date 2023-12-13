@@ -14,7 +14,7 @@ import javax.swing.ImageIcon;
 public class GoogleAPI{
 	
 	public void downloadMap(String location, int zoom) {
-		String apiDirectory = "C:\\Users\\Grey\\Desktop\\Traveler\\Traveler\\src\\googleAPI\\api_key";
+		String apiDirectory = "/Traveler/src/googleAPI/api_key";
 	    InputStream is = null;
 	    OutputStream os = null;
 	    try {
